@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    //开启数据绑定
+    dataBinding {
+        enabled = true
+    }
+
+    //JDK版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "com.gzf01.rxzsmbclient"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 1
+        versionName "0.0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //cifs
+    implementation group: 'org.codelibs', name: 'jcifs', version: '2.1.19'
+
+    //MVVM
+    implementation 'com.github.ruixiaozi:Rxzmvvm:0.0.19'
+
+    //弹出框
+    implementation 'com.github.HanHuoBin:BaseDialog:1.2.0'
+
+    //侧滑菜单
+    implementation 'com.justkiddingbaby:slidemenu:1.3.0'
+
+    //圆角图片
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //动态权限
+    implementation 'com.karumi:dexter:6.1.2'
+
+    //基础工具类
+    implementation 'com.luffykou:android-common-utils:1.1.3'
+
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+}

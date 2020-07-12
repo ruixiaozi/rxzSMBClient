@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="MainDataBinding">
+        <variable name="mainViewModel" type="com.gzf01.rxzsmbclient.vm.MainViewModel" />
+
+
+        <variable
+            name="mainTitle"
+            type="String" />
+
+        <variable
+            name="linkListinit"
+            type="java.util.ArrayList&lt;com.gzf01.rxzsmbclient.entity.Link&gt;" />
+
+        <variable
+            name="linkAdapter"
+            type="com.gzf01.rxzmvvm.view.adapter.MyRecycleAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/main_layout"
+        android:background="@color/white">
+
+        <com.jkb.slidemenu.SlideMenuLayout
+            android:id="@+id/mainSlideMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:allowDragging="true"
+            app:contentAlpha="0.2"
+            app:contentToggle="true"
+            app:parallax="false"
+
+            app:slideMode="right">
+
+            <!--右边-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/white">
+
+            </LinearLayout>
+
+            <!--中间-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--标题栏-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.5"
+                    android:orientation="horizontal"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:fitsSystemWindows="true"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="@dimen/dp_20"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_18"
+                        android:gravity="center_vertical"
+                        android:textAlignment="textStart"
+                        app:MyBold="@{true}"
+                        android:text="@{mainTitle}"
+                        android:letterSpacing="0.1"
+                        tools:ignore="RtlCompat" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:onClick="@{mainViewModel::openMenu}"
+                        android:src="@drawable/ic_menu"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    android:layout_weight="12">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:myAdapter="@{linkAdapter}"
+                        app:list="@{linkListinit}"
+                        />
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+
+                        <Button
+                            android:id="@+id/bt_save"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+
+                            android:text="添加新链接"
+
+                            android:layout_margin="@dimen/dp_5"
+                            android:textColor="@color/white"
+                            android:background="@drawable/button_primary"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </com.jkb.slidemenu.SlideMenuLayout>
+
+    </LinearLayout>
+
+</layout>
