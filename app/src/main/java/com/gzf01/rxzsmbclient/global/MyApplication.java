@@ -1,15 +1,16 @@
 package com.gzf01.rxzsmbclient.global;
 
 import android.app.Application;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
 
 import com.gzf01.rxzmvvm.global.Rxzmvvm;
+import com.gzf01.rxzsmbclient.model.sqldao.DaoMaster;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -21,7 +22,7 @@ import java.util.Date;
  */
 public class MyApplication extends Application {
 
-    public final static DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
 
 
     @Override
@@ -29,8 +30,28 @@ public class MyApplication extends Application {
         super.onCreate();
         //初始化框架
         Rxzmvvm.init(this);
-
+        initGreenDao(this);
     }
+
+    /**
+     * Title: initGreenDao 方法 <br />
+     * Description: 初始化数据库操作方法
+     *
+     * @return void
+     */
+    private void initGreenDao(Context context) {
+        //创建数据库mydb.db
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(context,"mydb.db");
+        //获取可写数据库
+        SQLiteDatabase database = helper.getWritableDatabase();
+        //获取数据库对象
+        DaoMaster daoMaster = new DaoMaster(database);
+        //获取Dao对象管理者
+        G.daoSession = daoMaster.newSession();
+    }
+
+
+
 
     /**
      * Title: setDateTV 方法 <br />
@@ -41,7 +62,7 @@ public class MyApplication extends Application {
     @BindingAdapter(value = {"myDate"})
     public static void setDateTV(TextView tv, Date date){
         if(date!=null){
-            tv.setText(df.format(date));
+            tv.setText(G.df.format(date));
         }
     }
 

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="AddLinkDataBinding">
+        <variable name="addLinkViewModel" type="com.gzf01.rxzsmbclient.vm.AddLinkViewModel" />
+
+        <variable
+            name="linkInit"
+            type="com.gzf01.rxzsmbclient.entity.Link" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/add_link_layout"
+        android:background="@color/white">
+
+        <!--标题栏-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:orientation="horizontal"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:fitsSystemWindows="true"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_10"
+                android:onClick="@{addLinkViewModel::back}"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:src="@drawable/ic_back"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:gravity="center_vertical"
+                android:textAlignment="textStart"
+                app:MyBold="@{true}"
+                android:text="添加新链接"
+                android:letterSpacing="0.1"
+                tools:ignore="RtlCompat" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_10"
+                android:onClick="@{addLinkViewModel::save}"
+                android:src="@drawable/ic_check"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="12"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:background="@drawable/bottom_solid_grey"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_14"
+                    android:layout_height="wrap_content"
+                    android:text="名称："/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="@={linkInit.name}"
+                    android:hint="smb链接名称(可选)"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:background="@drawable/bottom_solid_grey"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_14"
+                    android:layout_height="wrap_content"
+                    android:text="地址："/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="@={linkInit.address}"
+                    android:hint="smb链接地址"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:background="@drawable/bottom_solid_grey"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_14"
+                    android:layout_height="wrap_content"
+                    android:text="用户名："/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="@={linkInit.username}"
+                    android:hint="认证用户名(可选)"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:background="@drawable/bottom_solid_grey"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_14"
+                    android:layout_height="wrap_content"
+                    android:text="密码："/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:inputType="textPassword"
+                    android:text="@={linkInit.password}"
+                    android:hint="认证密码(可选)"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
