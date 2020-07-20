@@ -3,14 +3,17 @@ package com.gzf01.rxzsmbclient.vm;
 import android.view.View;
 
 import com.gzf01.rxzmvvm.entity.Request;
+import com.gzf01.rxzmvvm.global.Rxzmvvm;
 import com.gzf01.rxzmvvm.vm.BaseViewModel;
 import com.gzf01.rxzsmbclient.databinding.MainDataBinding;
 import com.gzf01.rxzsmbclient.entity.Link;
 import com.gzf01.rxzsmbclient.global.G;
 import com.gzf01.rxzsmbclient.view.AddLinkActivityView;
+import com.gzf01.rxzsmbclient.view.EditLinkActivityView;
 import com.gzf01.rxzsmbclient.view.MainActivityView;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 /**
  * Title: Main 类 <br/>
@@ -57,6 +60,22 @@ public class MainViewModel extends BaseViewModel<MainDataBinding, MainActivityVi
      */
     public void toAdd( View v){
         view.turnTo(view, AddLinkActivityView.class,null,true);
+    }
+
+    /**
+     * Title: toEdit 方法 <br />
+     * Description: 打开编辑连接页面
+     *
+     * @return void
+     */
+    public void toEdit(Link link){
+        Request request = new Request();
+        LinkedHashMap<String,String> map = new LinkedHashMap<>();
+        map.put("link", Rxzmvvm.gson.toJson(link));
+        request.setData(map);
+        request.setCode(EditLinkViewModel.EDIT_REQUEST_CODE);
+
+        view.turnTo(view, EditLinkActivityView.class,request,true);
     }
 
 }

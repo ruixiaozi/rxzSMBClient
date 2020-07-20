@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.AddLinkActivityView"/>
-
+        <activity android:name=".view.EditLinkActivityView"/>
     </application>
 
 </manifest>
