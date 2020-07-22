@@ -24,7 +24,7 @@ public class AddLinkViewModel extends BaseViewModel<AddLinkDataBinding, AddLinkA
 
     @Override
     public void onInit(Request request) {
-        binding.setLinkInit(new Link(0L,"","", "",""));
+        binding.setLinkInit(new Link(null,"","", "",""));
     }
 
     /**

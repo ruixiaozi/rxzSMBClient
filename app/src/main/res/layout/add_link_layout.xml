@@ -115,8 +115,27 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="7"
                     android:text="@={linkInit.address}"
-                    android:hint="smb链接地址"
+                    android:hint="192.168.0.2/store"
                     />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:background="@drawable/bottom_solid_grey"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_14"
+                    android:layout_height="wrap_content"
+                    android:text="提示：支持域名/ipv4/ipv6，ipv6地址需要在ip左右加上[]"/>
+
 
             </LinearLayout>
 

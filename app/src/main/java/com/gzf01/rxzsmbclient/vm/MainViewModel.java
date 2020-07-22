@@ -9,6 +9,7 @@ import com.gzf01.rxzsmbclient.databinding.MainDataBinding;
 import com.gzf01.rxzsmbclient.entity.Link;
 import com.gzf01.rxzsmbclient.global.G;
 import com.gzf01.rxzsmbclient.view.AddLinkActivityView;
+import com.gzf01.rxzsmbclient.view.BrowseActivityView;
 import com.gzf01.rxzsmbclient.view.EditLinkActivityView;
 import com.gzf01.rxzsmbclient.view.MainActivityView;
 
@@ -25,6 +26,8 @@ import java.util.LinkedHashMap;
  * @since 0.0.1
  */
 public class MainViewModel extends BaseViewModel<MainDataBinding, MainActivityView> {
+
+    private static final String TAG = "MainViewModel";
 
     @Override
     public void onInit(Request request) {
@@ -76,6 +79,23 @@ public class MainViewModel extends BaseViewModel<MainDataBinding, MainActivityVi
         request.setCode(EditLinkViewModel.EDIT_REQUEST_CODE);
 
         view.turnTo(view, EditLinkActivityView.class,request,true);
+    }
+
+    /**
+     * Title: linkTo 方法 <br />
+     * Description: 链接
+     *
+     * @return void
+     */
+    @SuppressWarnings("deprecation")
+    public void linkTo(Link link,View v){
+        Request request = new Request();
+        LinkedHashMap<String,String> map = new LinkedHashMap<>();
+        map.put("link", Rxzmvvm.gson.toJson(link));
+        request.setData(map);
+        request.setCode(BrowseViewModel.REQUEST_LINK_CODE);
+        //跳转浏览页面
+        view.turnTo(view, BrowseActivityView.class,request,true);
     }
 
 }

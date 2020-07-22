@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".view.AddLinkActivityView"/>
         <activity android:name=".view.EditLinkActivityView"/>
+        <activity android:name=".view.BrowseActivityView"/>
     </application>
 
 </manifest>

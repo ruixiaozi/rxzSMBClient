@@ -67,6 +67,19 @@ public class MyApplication extends Application {
     }
 
     /**
+     * Title: setDateTV 方法 <br />
+     * Description: 设置日期显示
+     *
+     * @return void
+     */
+    @BindingAdapter(value = {"longTime"})
+    public static void setLongTimeTV(TextView tv, Long time){
+
+        tv.setText(G.df.format(new Date(time)));
+
+    }
+
+    /**
      * Title: setVisible 方法 <br />
      * Description: 设置是否显示
      *

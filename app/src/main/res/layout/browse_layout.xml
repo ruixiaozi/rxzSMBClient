@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="BrowseDataBinding">
+       <variable
+            name="browseViewModel"
+             type="com.gzf01.rxzsmbclient.vm.BrowseViewModel" />
+
+        <variable
+            name="linkInit"
+            type="com.gzf01.rxzsmbclient.entity.Link" />
+
+        <variable
+            name="fileListInit"
+            type="java.util.ArrayList&lt;com.gzf01.rxzsmbclient.entity.File&gt;" />
+
+        <variable
+            name="fileAdapter"
+            type="com.gzf01.rxzmvvm.view.adapter.MyRecycleAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" 
+        android:orientation="vertical" 
+        android:id="@+id/browse_layout" 
+        android:background="@color/white">
+
+        <!--标题栏-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:orientation="horizontal"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:fitsSystemWindows="true"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_10"
+                android:onClick="@{browseViewModel::back}"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:src="@drawable/ic_back"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:gravity="center_vertical"
+                android:textAlignment="textStart"
+                android:singleLine="true"
+                android:ellipsize="end"
+                app:MyBold="@{true}"
+                android:text="@{linkInit.name}"
+                android:letterSpacing="0.1"
+                tools:ignore="RtlCompat" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="12"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:myAdapter="@{fileAdapter}"
+                app:list="@{fileListInit}"
+                />
+
+        </LinearLayout>
+        
+    </LinearLayout>
+	
+</layout>
