@@ -62,7 +62,13 @@
                 android:letterSpacing="0.1"
                 tools:ignore="RtlCompat" />
 
-
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_10"
+                android:onClick="@{browseViewModel::add}"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:src="@drawable/ic_add"/>
 
         </LinearLayout>
 

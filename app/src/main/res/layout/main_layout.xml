@@ -43,7 +43,57 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@color/white">
+                android:padding="@dimen/dp_20"
+                android:background="@color/colorPrimary">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_28"
+                        app:MyBold="@{true}"
+                        android:layout_marginHorizontal="@dimen/dp_10"
+                        android:text="V"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_20"
+                        app:MyBold="@{true}"
+                        android:text="1.0.0"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="@dimen/dp_50"
+                        android:src="@drawable/logo"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        app:MyBold="@{true}"
+                        android:text="睿小子"/>
+
+                </LinearLayout>
+
+
 
             </LinearLayout>
 

@@ -93,5 +93,17 @@ public class MyApplication extends Application {
             view.setVisibility(View.GONE);
     }
 
+    /**
+     * Title: setLongClickListen 方法 <br />
+     * Description: 设置长按监听
+     *
+     * @return void
+     */
+    @BindingAdapter(value = {"longClickListen"})
+    public static void setLongClickListen(View view, View.OnLongClickListener longClickListener){
+        view.setOnLongClickListener(longClickListener);
+    }
+
+
 
 }
