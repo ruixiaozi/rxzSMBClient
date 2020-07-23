@@ -21,3 +21,16 @@
     0.0.1 完成连接到网络目录，浏览文件
 + 2020.07.23  
     1.0.0 完成上传、下载，删除、创建目录等。发布第一个版本
+
+---
+### 3. License
+
+```
+ GNU GENERAL PUBLIC LICENSE
+
+ Copyright (C) Ruixiaozi
+ 
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+```
