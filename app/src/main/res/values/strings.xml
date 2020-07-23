@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RxzSMB文件浏览器</string>
+    <string name="app_version">v1.0.1</string>
 </resources>

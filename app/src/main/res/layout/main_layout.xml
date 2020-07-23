@@ -47,40 +47,78 @@
                 android:background="@color/colorPrimary">
 
 
+                <ImageView
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="@dimen/dp_70"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:src="@drawable/smblogo"/>
+
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_10"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dp_20"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textSize="@dimen/sp_16"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/sp_28"
-                        app:MyBold="@{true}"
-                        android:layout_marginHorizontal="@dimen/dp_10"
-                        android:text="V"/>
+                        app:MyBold="@{true}"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text=" "
+                        android:textSize="@dimen/sp_16"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/sp_20"
-                        app:MyBold="@{true}"
-                        android:text="1.0.0"/>
+                        app:MyBold="@{true}"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_version"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/white"
+                        app:MyBold="@{true}"/>
+
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="GPL-3.0 License"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="@color/white"
+                    app:MyBold="@{true}"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/dp_50"
-                        android:layout_height="@dimen/dp_50"
+                        android:layout_width="@dimen/dp_40"
+                        android:layout_height="@dimen/dp_40"
                         android:src="@drawable/logo"/>
 
                     <TextView
@@ -88,11 +126,60 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:textColor="@color/white"
+                        android:layout_marginHorizontal="@dimen/dp_10"
                         app:MyBold="@{true}"
                         android:text="睿小子"/>
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:src="@drawable/ic_group"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:layout_marginHorizontal="@dimen/dp_15"
+                        app:MyBold="@{true}"
+                        android:textSize="@dimen/sp_14"
+                        android:text="QQ群：647508929"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:src="@drawable/ic_github"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:layout_marginHorizontal="@dimen/dp_15"
+                        app:MyBold="@{true}"
+                        android:textSize="@dimen/sp_10"
+                        android:text="ruixiaozi/rxzSMBClient"/>
+
+                </LinearLayout>
 
 
             </LinearLayout>

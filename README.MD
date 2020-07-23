@@ -1,9 +1,15 @@
 ## samba Android客户端
+
+Samba smb Android客户端 文件浏览器 CIFS ipv4/ipv6/域名
+
+当前版本：v1.0.1
+
 ---
 
 ### 1. 介绍 
 
-&emsp;&emsp;支持IPV4/IPV6/域名访问samba服务器，界面简洁。
++ 支持IPV4/IPV6/域名访问samba服务器，界面简洁。
++ 支持文件浏览，创建、删除文件夹，上传、下载、删除文件
 
 
 ![p1](./img/img1.png) ![p2](./img/img2.png) ![p3](./img/img3.png)
